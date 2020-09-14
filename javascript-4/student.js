@@ -4,7 +4,7 @@
 //////////////////Step 1////////////////////
 // Create a new array called 'faveColors' and assign it a value of your three favorite colors as strings.
 
-// CODE HERE
+var faveColors = [blue, black, red];
 
 //////////////////Step 2////////////////////
 // Create an object called 'me' that has these keys: firstName, superHeroName, homeTown, superPowers, superPowerXP, and profileImage. 
@@ -21,24 +21,46 @@
 
 // The profileImage key value should be a method that returns this url `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`.
 
-// CODE HERE
+var me = {
+    firstName: 'kegan',
+    superHeroName: 'modulus- man',
+    homeTown: 'ogden',
+    superPowers: ['i can find even and odd numbers', "fly", "move through time and space"],
+    superPowerXP: function superPowerXP() {
+        return Math.floor(Math.random()  * 100) + 1;
+      },
+    profileImage: function profileImage(){
+        return `https://randomuser.me/api/portraits/med/lego/${Math.floor(Math.random() * 10) + 1 }.jpg`;
+    }
+
+}
 
 //////////////////Step 3////////////////////
 // In this step, you will create three variables that will hold some data from your me object. The first variable you create should be 'regularName', and it should receive its value from the value of your firstName key on the me object above. The next variable is 'superName' which should have its value assigned as the value of the superHeroName property on the me object. The last variable you should create is 'homeTown' which will be the value of homeTown on the me object
 
-// CODE HERE
+var regularName = me.firstName;
+var superName = me.superHeroName;
+var homeTown = me.homeTown;
 
 //////////////////Step 4////////////////////
 //Create a function called 'setColor' that takes in one parameter called 'arr' that is an array of colors. Make sure that we only ever have three colors by using splice to trim the array to just 3 colors. 
 
-// Next, create a for loop to loop over the remaining three colors. If any of the colors is 'blue', change it's value to '#4D4DFF' (which is just a more appealing shade of blue). Outside of the for loop but still inside of setColor, invoke the function called 'background' which will take in three arguments. These arguments should be the three items remaining in your colors array. 
+// Next, create a for loop to loop over the remaining three colors. If any of the colors is 'blue', change it's value to '#4D4DFF' (which is just a more appealing shade of blue). Outside of the for loop but still inside of setColor, 
+//invoke the function called 'background' which will take in three arguments. These arguments should be the three items remaining in your colors array. 
 
-// CODE HERE
+function setColor(arr){
+    arr.splice(0, 3);
+    for (var i in arr){
+        if(arr[i] === 'blue'){
+            arr[i] = '#4D4DFF';
+        }
+    }
+    background(arr[0],arr[1],arr[2]);
+}
 
 //////////////////Step 5////////////////////
 //Create a function called 'setPowers' that takes in 'arr' as a parameter. In your setPowers function, loop over the arr parameter and run a function we created called createLi(), which will take each item of the array as an argument. Remember, you did not create the createLi function. The createLi function is a function we created that determines how the content is displayed.
 
-// CODE HERE
 
 
 //////////////////Step 6////////////////////
